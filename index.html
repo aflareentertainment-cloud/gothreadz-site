@@ -201,9 +201,11 @@ class Component extends DCLogic {
       tabBtns.forEach(b => { b.style.height = phone ? '32px' : '38px'; b.style.padding = phone ? '0 13px' : '0 22px'; b.style.fontSize = phone ? '12px' : '14px'; });
       tabs.style.top = phone ? '2.4vh' : '4.2vh';
       logo.style.display = W < 1100 ? 'none' : 'flex';
-      Object.assign(rail.style, phone ? { left: '10px', top: (H * .13) + 'px', bottom: 'auto', transform: 'none' } : { left: 'max(18px,1.8vw)', top: '50%', bottom: 'auto', transform: 'translateY(-50%)' });
-      // phones: lift the product carousel above the model's head so cards never cover the face
-      q('arc').style.top = phone ? Math.max(CW * .85 + H * .1, (H - MH) * .55) + 'px' : '50%';
+      // phones: lift the product carousel above the model's head so cards never cover the face,
+      // and tuck the icon rail just under the carousel on the left
+      const arcTop = Math.max(CW * .85 + H * .1, (H - MH) * .55);
+      q('arc').style.top = phone ? arcTop + 'px' : '50%';
+      Object.assign(rail.style, phone ? { left: '8px', top: (arcTop + CW * .71 + 14) + 'px', bottom: 'auto', transform: 'none' } : { left: 'max(18px,1.8vw)', top: '50%', bottom: 'auto', transform: 'translateY(-50%)' });
       [...rail.querySelectorAll('[data-rb]')].forEach(b => { b.style.width = b.style.height = phone ? '34px' : '42px'; });
       q('prev').style.display = q('next').style.display = phone ? 'none' : 'grid';
       buy.style.flexWrap = phone ? 'wrap' : 'nowrap';
