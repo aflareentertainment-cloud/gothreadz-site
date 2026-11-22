@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="data.js?v=1795366042"></script>
+<script src="hero-details.js?v=1795365797"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>GoThreadz</title>
+<meta name="description" content="GoThreadz wholesale blank apparel — try on tees, polos, hoodies and sweatshirts, then build your quote.">
+<link rel="icon" href="assets/logo/07-icon-gt-badge.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#e9e4dc;color:#fff;font-family:Montserrat,system-ui,sans-serif;overflow:hidden;-webkit-font-smoothing:antialiased;user-select:none}
+button{font:inherit;color:inherit;background:none;border:0}
+a{color:#F26A1B;text-decoration:none}
+a:hover{color:#BF4D0D}
+@media (pointer:fine){html,body,button,a{cursor:none !important}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="position:fixed;inset:0;overflow:hidden;font-family:Montserrat,system-ui,sans-serif">
+
+  <div data-k="room" style="position:fixed;inset:-3%;background:url('assets/hero/room.webp') center/cover;filter:blur(2.5px) saturate(1.05);transform:scale(1.08);will-change:transform">
+    <div style="position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 45%,rgba(255,252,246,.10),rgba(40,30,20,.16))"></div>
+  </div>
+
+  <div data-k="ghost" style="position:fixed;left:50%;top:20vh;z-index:2;display:flex;font-weight:900;font-size:30vh;line-height:.8;letter-spacing:-.04em;color:rgba(255,255,255,.3);-webkit-text-stroke:1px rgba(255,255,255,.35);text-shadow:0 1px 0 rgba(255,255,255,.35);transform:translateX(-50%);pointer-events:none;white-space:nowrap">
+    <span style="display:inline-block">F</span><span style="display:inline-block">I</span><span style="display:inline-block">T</span>
+  </div>
+
+  <a data-k="logo" href="index.html" style="position:fixed;z-index:30;top:4.2vh;left:max(18px,1.8vw);display:flex;align-items:center;height:48px">
+    <img src="assets/hero/lockup-fullcolor.png" alt="GoThreadz" style="height:40px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(255,255,255,.5))">
+  </a>
+
+  <div data-k="tabs" style="position:fixed;z-index:30;top:4.2vh;left:50%;transform:translateX(-50%);display:flex;gap:2px;padding:5px;border-radius:999px;max-width:calc(100vw - 20px);overflow-x:auto;scrollbar-width:none;background:linear-gradient(155deg,rgba(250,248,245,.30),rgba(150,144,136,.20) 48%,rgba(205,200,192,.24));backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(255,255,255,.12),0 20px 50px -24px rgba(40,30,20,.45)">
+    <div data-k="pill" style="position:absolute;top:5px;left:0;height:38px;width:80px;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px -6px rgba(0,0,0,.3);transition:transform .6s cubic-bezier(.2,.8,.2,1),width .6s cubic-bezier(.2,.8,.2,1)"></div>
+    <button data-tab="1" data-active="1" data-href="" style="position:relative;height:38px;padding:0 22px;font-weight:600;font-size:14px;color:#111;white-space:nowrap;flex:none">Try On</button>
+    <button data-tab="1" data-href="shop.html#/shop" style="position:relative;height:38px;padding:0 22px;font-weight:500;font-size:14px;color:rgba(30,30,32,.72);white-space:nowrap;flex:none">Catalog</button>
+    <button data-tab="1" data-href="shop.html#/wholesale" style="position:relative;height:38px;padding:0 22px;font-weight:500;font-size:14px;color:rgba(30,30,32,.72);white-space:nowrap;flex:none">How to order</button>
+    <button data-tab="1" data-href="shop.html#/about" style="position:relative;height:38px;padding:0 22px;font-weight:500;font-size:14px;color:rgba(30,30,32,.72);white-space:nowrap;flex:none">Our promise</button>
+    <button data-tab="1" data-href="shop.html#/quote" style="position:relative;height:38px;padding:0 22px;font-weight:500;font-size:14px;color:rgba(30,30,32,.72);white-space:nowrap;flex:none">Get a quote</button>
+  </div>
+
+  <div data-k="rail" style="position:fixed;z-index:30;left:max(18px,1.8vw);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;padding:8px;border-radius:999px;background:linear-gradient(155deg,rgba(250,248,245,.30),rgba(150,144,136,.20) 48%,rgba(205,200,192,.24));backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(255,255,255,.12),0 20px 50px -24px rgba(40,30,20,.45)">
+    <button data-rb="1" aria-label="Try on" style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.9);color:#111">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 3 3 6l2 5 2-1v11h10V10l2 1 2-5-5-3c-.5 1.7-2 2.8-4 2.8S8.5 4.7 8 3Z"></path></svg>
+    </button>
+    <a data-rb="1" href="shop.html#/quote" aria-label="Quote list" style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:rgba(30,30,32,.8)" style-hover="background:rgba(255,255,255,.35)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6.2"></path><circle cx="9" cy="20" r="1.2"></circle><circle cx="17" cy="20" r="1.2"></circle></svg>
+    </a>
+    <a data-rb="1" href="shop.html#/wholesale" aria-label="How to order" style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:rgba(30,30,32,.8)" style-hover="background:rgba(255,255,255,.35)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg>
+    </a>
+    <a data-rb="1" href="shop.html#/quote" aria-label="Contact" style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:rgba(30,30,32,.8)" style-hover="background:rgba(255,255,255,.35)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.2-4 4.3-6 8-6s6.8 2 8 6"></path></svg>
+    </a>
+  </div>
+
+  <div data-k="stage" style="position:fixed;inset:0;z-index:10;touch-action:pan-y">
+    <div data-k="arc" style="position:absolute;left:50%;top:50%;width:0;height:0">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="24">
+        <div data-card="1" data-i="{{ c.i }}" style="position:absolute;left:-90px;top:-128px;width:180px;height:256px;border-radius:22px;overflow:hidden;opacity:0;will-change:transform,opacity;background:linear-gradient(155deg,rgba(250,248,245,.30),rgba(150,144,136,.20) 48%,rgba(205,200,192,.24));backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(255,255,255,.12),0 20px 50px -24px rgba(40,30,20,.45)">
+          <img data-src="{{ c.img }}" alt="{{ c.n }}" draggable="false" style="position:absolute;left:8%;right:8%;top:5%;width:84%;height:66%;object-fit:contain;border-radius:14px;filter:drop-shadow(0 14px 14px rgba(40,30,20,.22));pointer-events:none">
+          <div data-k="cn" style="position:absolute;left:0;right:0;bottom:17%;text-align:center;font-weight:500;font-size:12px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.18);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 6%">{{ c.n }}</div>
+          <div data-k="cs" style="position:absolute;left:0;right:0;bottom:7%;text-align:center;font-weight:800;font-style:italic;font-size:17px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.18)">{{ c.cno }}</div>
+          <div data-k="sheen" style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%);transform:translateX(-120%);pointer-events:none"></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div data-k="model" style="position:fixed;left:50%;bottom:0;z-index:50;height:78vh;aspect-ratio:500/752;transform:translateX(-50%);pointer-events:none">
+    <div data-k="mCur" style="position:absolute;inset:0;opacity:0;background-image:url('assets/hero/cat/m22.png?v=2');background-size:100% 100%;background-position:0% 100%;background-repeat:no-repeat"><div style="position:absolute;inset:0;background-image:url('assets/hero/model2-garment-shade.png');background-size:100% 100%;background-position:inherit;background-repeat:no-repeat"><div data-k="tCur" style="position:absolute;inset:0;background:#f6f5f2;mix-blend-mode:multiply;transition:background-color 1.1s cubic-bezier(.4,0,.2,1);-webkit-mask-image:url('assets/hero/model2-garment-shade.png');-webkit-mask-size:100% 100%;-webkit-mask-position:inherit;-webkit-mask-repeat:no-repeat;mask-image:url('assets/hero/model2-garment-shade.png');mask-size:100% 100%;mask-position:inherit;mask-repeat:no-repeat"></div></div></div>
+    <div data-k="mNext" style="position:absolute;inset:0;clip-path:inset(0 0 100% 0);background-image:url('assets/hero/cat/m22.png?v=2');background-size:100% 100%;background-position:0% 100%;background-repeat:no-repeat;transform-origin:50% 100%"><div style="position:absolute;inset:0;background-image:url('assets/hero/model2-garment-shade.png');background-size:100% 100%;background-position:inherit;background-repeat:no-repeat"><div data-k="tNext" style="position:absolute;inset:0;background:#f6f5f2;mix-blend-mode:multiply;transition:background-color 1.1s cubic-bezier(.4,0,.2,1);-webkit-mask-image:url('assets/hero/model2-garment-shade.png');-webkit-mask-size:100% 100%;-webkit-mask-position:inherit;-webkit-mask-repeat:no-repeat;mask-image:url('assets/hero/model2-garment-shade.png');mask-size:100% 100%;mask-position:inherit;mask-repeat:no-repeat"></div></div></div>
+    <div data-k="grid" style="position:absolute;inset:0;clip-path:inset(0 0 100% 0);background:repeating-linear-gradient(0deg,transparent 0 5px,rgba(255,255,255,.22) 5px 6px);mix-blend-mode:screen;-webkit-mask-image:url('assets/hero/cat/m22.png?v=2');-webkit-mask-size:100% 100%;-webkit-mask-position:0% 100%;-webkit-mask-repeat:no-repeat;mask-image:url('assets/hero/cat/m22.png?v=2');mask-size:100% 100%;mask-position:0% 100%;mask-repeat:no-repeat"></div>
+    <div data-k="scan" style="position:absolute;z-index:3;left:-6%;width:112%;top:0;height:1.5px;opacity:0;background:rgba(255,255,255,.9);box-shadow:0 0 6px rgba(255,255,255,.5);">
+      <div data-k="wash" style="display:none;position:absolute;left:0;right:0;bottom:100%;height:90px;background:linear-gradient(to top,rgba(220,238,255,.32),transparent)"></div>
+    </div>
+  </div>
+
+  <button data-k="prev" aria-label="Previous" style="position:fixed;z-index:30;top:50%;margin-top:-23px;left:calc(max(18px,1.8vw) + 76px);width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#222;background:linear-gradient(155deg,rgba(250,248,245,.30),rgba(150,144,136,.20) 48%,rgba(205,200,192,.24));backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(255,255,255,.12),0 20px 50px -24px rgba(40,30,20,.45)">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"></path></svg>
+  </button>
+  <button data-k="next" aria-label="Next" style="position:fixed;z-index:30;top:50%;margin-top:-23px;right:max(18px,1.8vw);width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#222;background:linear-gradient(155deg,rgba(250,248,245,.30),rgba(150,144,136,.20) 48%,rgba(205,200,192,.24));backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(255,255,255,.12),0 20px 50px -24px rgba(40,30,20,.45)">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5"></path></svg>
+  </button>
+
+  <div data-k="buy" style="position:fixed;z-index:60;left:50%;bottom:4.6vh;transform:translateX(-50%);width:min(780px,calc(100vw - 32px));display:flex;align-items:center;gap:22px;padding:12px 12px 12px 12px;border-radius:24px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.18);background:linear-gradient(155deg,rgba(250,248,245,.30),rgba(150,144,136,.20) 48%,rgba(205,200,192,.24));backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(255,255,255,.12),0 20px 50px -24px rgba(40,30,20,.45)">
+    <div style="width:64px;height:64px;flex:none;border-radius:14px;background:rgba(255,255,255,.3);overflow:hidden;padding:6px">
+      <img data-k="thumb" src="assets/hero/cat/f22.png" alt="" style="width:100%;height:100%;object-fit:contain;border-radius:9px;display:block">
+    </div>
+    <div style="flex:1;min-width:120px;display:flex;flex-direction:column;gap:4px">
+      <div data-k="lnName" style="position:relative;height:1.15em;overflow:hidden;font-weight:700;font-size:clamp(13px,1.6vw,16px)"><span style="position:absolute;left:0;top:0;right:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Heavy Premium Cotton Tee</span></div>
+      <div data-k="lnSpec" style="position:relative;height:1.15em;overflow:hidden;font-weight:500;font-size:14px;opacity:.9"><span style="position:absolute;left:0;top:0;white-space:nowrap">No. 7900 · 235 GSM</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;flex:none">
+      <div style="font-weight:500;font-size:12px;opacity:.85">Size</div>
+      <div data-k="sizes" style="display:flex;gap:6px">
+        <button data-size="S" style="width:30px;height:30px;border-radius:50%;font-weight:600;font-size:12px;background:rgba(255,255,255,.22);color:#fff;transition:transform .2s" style-active="transform:scale(.9)">S</button>
+        <button data-size="M" style="width:30px;height:30px;border-radius:50%;font-weight:600;font-size:12px;background:#fff;color:#111;text-shadow:none;transition:transform .2s" style-active="transform:scale(.9)">M</button>
+        <button data-size="L" style="width:30px;height:30px;border-radius:50%;font-weight:600;font-size:12px;background:rgba(255,255,255,.22);color:#fff;transition:transform .2s" style-active="transform:scale(.9)">L</button>
+        <button data-size="XL" style="width:30px;height:30px;border-radius:50%;font-weight:600;font-size:12px;background:rgba(255,255,255,.22);color:#fff;transition:transform .2s" style-active="transform:scale(.9)">XL</button>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;flex:none;min-width:130px">
+      <div data-k="lnColor" style="position:relative;height:1.15em;overflow:hidden;font-weight:500;font-size:12px;opacity:.85"><span style="position:absolute;left:0;top:0;white-space:nowrap">Color · White</span></div>
+      <div data-k="dots" style="display:flex;gap:9px;padding:3px"></div>
+    </div>
+    <a data-k="cta" href="shop.html#/shop" style="flex:none;background:#F26A1B;color:#0B1B34;text-shadow:none;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:14px 18px;border-radius:14px;white-space:nowrap" style-hover="background:#ff7a2b;color:#0B1B34">Add to quote</a>
+  </div>
+
+  <div data-k="cur" style="position:fixed;left:0;top:0;width:58px;height:58px;z-index:100;pointer-events:none;transform:translate(-200px,-200px);display:none">
+    <div data-k="ring" style="position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(255,255,255,.95);background:rgba(255,255,255,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 6px 20px -8px rgba(0,0,0,.35);transition:transform .5s cubic-bezier(.2,.8,.2,1),background .5s cubic-bezier(.2,.8,.2,1)"></div>
+    <div data-k="dot" style="position:absolute;left:26px;top:26px;width:6px;height:6px;border-radius:50%;background:#fff;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .4s"></div>
+    <div data-k="ttry" style="position:absolute;inset:0;display:grid;place-items:center;font-weight:700;font-size:10px;letter-spacing:.12em;color:#111;opacity:0;transform:scale(.5);transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s">TRY ON</div>
+    <div data-k="tdrag" style="position:absolute;inset:0;display:grid;place-items:center;font-weight:700;font-size:10px;letter-spacing:.12em;color:#fff;opacity:0;transform:scale(.5);transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s">DRAG</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+// m = model figure that matches the garment: .37 white crew tee, 25.0 crewneck sweatshirt, 74.77 grey pullover hoodie
+const ITEMS = [
+  { no: '8950', n: 'Heavyweight Boxy Pullover Hoodie', spec: 'Sweatshirts & Hoodies', img: 'assets/hero/cat/f22.png', c: [['Washed Black', '#35363a', 'assets/hero/cat/m22.png?v=2']] },
+  { no: '8900', n: 'Heavyweight Pullover Hoodie', spec: 'Sweatshirts & Hoodies', img: 'assets/hero/cat/f20.png', c: [['Brown', '#4a352c', 'assets/hero/cat/m20.png?v=2']] },
+  { no: '8910', n: 'Brushed Cotton Blend Fleece Pullover Hoodie', spec: 'Sweatshirts & Hoodies', img: 'assets/hero/cat/f21.png', c: [['Black', '#141414', 'assets/hero/cat/m21.png?v=2']] },
+  { no: '8800', n: 'French Terry Pullover Hoodie', spec: 'Sweatshirts & Hoodies', img: 'assets/hero/cat/f19.png', c: [['Cream', '#ece6d6', 'assets/hero/cat/m19.png?v=2']] },
+  { no: '8000', n: 'French Terry Crewneck Sweatshirt', spec: 'Sweatshirts & Hoodies', img: 'assets/hero/cat/f14.png', c: [['Burgundy', '#8a0f24', 'assets/hero/cat/m14.png?v=2']] },
+  { no: '8750', n: 'Heavy Premium French Terry Oversized Tee', spec: 'Tees', img: 'assets/hero/cat/f18.png', c: [['White', '#f4f4f2', 'assets/hero/cat/m18.png?v=2']] },
+  { no: '8700', n: 'Heavy French Terry Oversized Tee', spec: 'Tees', img: 'assets/hero/cat/f16.png', c: [['Cream', '#ece6d8', 'assets/hero/cat/m16.png?v=2']] },
+  { no: '8600', n: 'Heavy French Terry Acid-Washed Tee', spec: 'Tees', img: 'assets/hero/cat/f15.png', c: [['Acid Black', '#2a2a2c', 'assets/hero/cat/m15.png?v=2']] },
+  { no: '7500', n: 'Heavy Premium Oversized Tee', spec: 'Tees', img: 'assets/hero/cat/f10.png', c: [['Sand', '#d9c6a9', 'assets/hero/cat/m10.png?v=2']] },
+  { no: '7600', n: 'Oversized Stripes Tee', spec: 'Tees', img: 'assets/hero/cat/f11.png', c: [['Black / White Stripe', 'linear-gradient(#111 0 50%,#f4f4f2 50% 100%)', 'assets/hero/cat/m11.png?v=2']] },
+  { no: '7280', n: 'Heavy Jersey Oversized Tee', spec: 'Tees', img: 'assets/hero/cat/f8.png', c: [['Black', '#151515', 'assets/hero/cat/m8.png?v=2']] },
+  { no: '7350', n: 'Heavy Jersey Oversized Mock Tee', spec: 'Tees', img: 'assets/hero/cat/f9.png', c: [['White', '#eeeef0', 'assets/hero/cat/m9.png?v=2']] },
+  { no: '8700', n: 'Boxy Cropped French Terry Tee', spec: 'Tees', img: 'assets/hero/cat/f17.png', c: [['Navy', '#141a2c', 'assets/hero/cat/m17.png?v=2']] },
+  { no: '7000', n: 'Heavy Poly Cotton Tee', spec: 'Tees', img: 'assets/hero/cat/f7.png', c: [['Yellow', '#f5b82e', 'assets/hero/cat/m7.png?v=2']] },
+  { no: '7900', n: 'Heavy Premium Cotton Tee', spec: 'Tees', img: 'assets/hero/cat/f13.png', c: [['Red', '#b3121c', 'assets/hero/cat/m13.png?v=2']] },
+  { no: '7700', n: 'Soft Premium Cotton Tee', spec: 'Tees', img: 'assets/hero/cat/f12.png', c: [['Navy Blue', '#2b3b66', 'assets/hero/cat/m12.png?v=2']] },
+  { no: '5900', n: 'Heavy Hybrid Cotton Tee', spec: 'Tees', img: 'assets/hero/cat/f4.png', c: [['Cream', '#ebe5d6', 'assets/hero/cat/m4.png?v=2']] },
+  { no: '5700', n: 'Soft Hybrid Cotton Tee', spec: 'Tees', img: 'assets/hero/cat/f3.png', c: [['Navy', '#1b2238', 'assets/hero/cat/m3.png?v=2']] },
+  { no: '5950', n: 'Hybrid Ringer Tee', spec: 'Tees', img: 'assets/hero/cat/f5.png', c: [['White / Royal', 'linear-gradient(#f4f4f2 0 55%,#1f3fa6 55% 100%)', 'assets/hero/cat/m5.png?v=2']] },
+  { no: '', n: 'Subli Cotton Tee', spec: 'Tees', img: 'assets/hero/cat/f25.png', c: [['White', '#f6f6f4', 'assets/hero/cat/m25.png?v=2']] },
+  { no: '5990', n: 'Korean Fit Polo', spec: 'Polos', img: 'assets/hero/cat/f6.png', c: [['Beige', '#d8c9ae', 'assets/hero/cat/m6.png?v=2']] },
+  { no: '9000', n: 'Plain Piqué Polo Shirt', spec: 'Polos', img: 'assets/hero/cat/f23.png', c: [['Black', '#151515', 'assets/hero/cat/m23.png?v=2']] },
+  { no: '9900', n: 'Tipped Piqué Polo Shirt', spec: 'Polos', img: 'assets/hero/cat/f24.png', c: [['Black Tipped', 'linear-gradient(#151515 0 60%,#8a1a24 60% 75%,#f4f4f2 75% 100%)', 'assets/hero/cat/m24.png?v=2']] },
+  { no: '', n: 'French Terry Muscle Tee', spec: 'Tees', img: 'assets/hero/cat/f26.png', c: [['Black', '#151515', 'assets/hero/cat/m26.png?v=2']] },
+];
+
+const CARDS = ITEMS.map((it, i) => { return { i, no: it.no, cno: it.no ? 'No. ' + it.no : it.spec, n: it.n, img: it.img }; });
+const mod = (n, m) => ((n % m) + m) % m;
+
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  renderVals() { return { rootRef: this.rootRef, cards: CARDS }; }
+  componentDidMount() { this.init(); }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); this.offs && this.offs.forEach(f => f()); }
+
+  init() {
+    const R = this.rootRef.current; if (!R) return;
+    const q = k => R.querySelector('[data-k="' + k + '"]');
+    const cards = [...R.querySelectorAll('[data-card]')], NC = cards.length;
+    cards.forEach(c => { const im = c.querySelector('img[data-src]'); if (im) im.src = im.dataset.src; });
+    const seeds = cards.map((_, i) => i * 1.73 + .4);
+    const room = q('room'), ghost = q('ghost'), gl = [...ghost.children], stage = q('stage'), model = q('model'),
+      mCur = q('mCur'), mNext = q('mNext'), grid = q('grid'), scan = q('scan'), wash = q('wash'),
+      cur = q('cur'), ring = q('ring'), dot = q('dot'), tTry = q('ttry'), tDrag = q('tdrag'),
+      tabs = q('tabs'), pill = q('pill'), rail = q('rail'), buy = q('buy'), logo = q('logo');
+    const tabBtns = [...tabs.querySelectorAll('[data-tab]')];
+    const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = matchMedia('(pointer:fine)').matches;
+    this.offs = [];
+    const on = (el, ev, fn, o) => { el.addEventListener(ev, fn, o); this.offs.push(() => el.removeEventListener(ev, fn, o)); };
+
+    let W, H, phone, CW, MH, XS;
+    const placePill = () => { const b = tabBtns.find(b => b.dataset.active === '1'); pill.style.width = b.offsetWidth + 'px'; pill.style.height = b.offsetHeight + 'px'; pill.style.transform = 'translateX(' + b.offsetLeft + 'px)'; };
+    const resize = () => {
+      W = innerWidth; H = innerHeight; phone = W < 768;
+      CW = phone ? Math.min(W * .3, 170) : Math.min(W * .148, H * .33);
+      MH = phone ? Math.min(H * .62, W * 1.28) : Math.min(H * .78, W * .62);
+      XS = (phone ? [0, .36, .5, .56, .6, .62] : [0, .215, .345, .432, .49, .52]).map(v => v * W);
+      cards.forEach(c => {
+        Object.assign(c.style, { width: CW + 'px', height: CW * 1.42 + 'px', left: -CW / 2 + 'px', top: -CW * .71 + 'px' });
+        c.querySelector('[data-k="cn"]').style.fontSize = CW * .068 + 'px';
+        c.querySelector('[data-k="cs"]').style.fontSize = CW * .095 + 'px';
+      });
+      model.style.height = MH + 'px';
+      ghost.style.fontSize = MH * .42 + 'px';
+      ghost.style.top = (H / 2 - MH * .42) + 'px';
+      wash.style.height = MH * .12 + 'px';
+      tabBtns.forEach(b => { b.style.height = phone ? '32px' : '38px'; b.style.padding = phone ? '0 13px' : '0 22px'; b.style.fontSize = phone ? '12px' : '14px'; });
+      tabs.style.top = phone ? '2.4vh' : '4.2vh';
+      logo.style.display = W < 1100 ? 'none' : 'flex';
+      Object.assign(rail.style, phone ? { left: '10px', top: 'auto', bottom: 'calc(4.6vh + 150px)', transform: 'none' } : { left: 'max(18px,1.8vw)', top: '50%', bottom: 'auto', transform: 'translateY(-50%)' });
+      [...rail.querySelectorAll('[data-rb]')].forEach(b => { b.style.width = b.style.height = phone ? '34px' : '42px'; });
+      q('prev').style.display = q('next').style.display = phone ? 'none' : 'grid';
+      buy.style.flexWrap = phone ? 'wrap' : 'nowrap';
+      buy.style.gap = phone ? '12px 16px' : '22px';
+      buy.style.padding = phone ? '12px' : '12px 12px 12px 12px';
+      placePill();
+    };
+    resize(); on(window, 'resize', resize);
+    if (document.fonts) document.fonts.ready.then(placePill);
+
+    const xAt = a => { if (a >= 5) return XS[5]; const i = Math.floor(a), f = a - i; return XS[i] + (XS[i + 1] - XS[i]) * f; };
+
+    // buy card
+    const EZ = 'cubic-bezier(.2,.8,.2,1)';
+    const roll = (ln, text) => {
+      const old = ln.lastElementChild; if (old.textContent === text) return;
+      if (RM) { old.textContent = text; return; }
+      const nw = old.cloneNode(); nw.textContent = text; ln.appendChild(nw);
+      const o = { duration: 620, easing: EZ, fill: 'forwards' };
+      old.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-110%)' }], o).onfinish = () => old.remove();
+      nw.animate([{ transform: 'translateY(110%)' }, { transform: 'translateY(0)' }], o);
+    };
+    const dots = q('dots'), thumb = q('thumb'), tCur = q('tCur'), tNext = q('tNext');
+    let curCol = ITEMS[0].c[0][2];
+    const setDots = it => {
+      dots.innerHTML = ''; curCol = it.c[0][2];
+      it.c.forEach(([name, hex, look], i) => {
+        const d = document.createElement('button');
+        d.setAttribute('aria-label', name);
+        Object.assign(d.style, { width: '18px', height: '18px', borderRadius: '50%', background: hex, border: '1px solid rgba(0,0,0,.1)', transition: 'box-shadow .3s', boxShadow: i === 0 ? '0 0 0 2px rgba(255,255,255,.95), 0 0 0 4px rgba(0,0,0,.12)' : 'none' });
+        d.onclick = () => { window.GT_COL = name; [...dots.children].forEach(x => x.style.boxShadow = 'none'); d.style.boxShadow = '0 0 0 2px rgba(255,255,255,.95), 0 0 0 4px rgba(0,0,0,.12)'; roll(q('lnColor'), 'Color · ' + name); swapLook(look); };
+        dots.appendChild(d);
+      });
+    };
+    const updateBuy = k => {
+      const it = ITEMS[k]; window.GT_K = k; window.GT_COL = it.c[0][0];
+      roll(q('lnName'), it.n); roll(q('lnSpec'), (it.no ? 'No. ' + it.no + ' · ' : '') + it.spec); roll(q('lnColor'), 'Color · ' + it.c[0][0]);
+      thumb.src = it.img; thumb.alt = it.n;
+      if (!RM) thumb.animate([{ transform: 'translateY(70%) scale(.8)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 650, easing: EZ });
+      setDots(it);
+    };
+    setDots(ITEMS[0]);
+    [...q('sizes').children].forEach(b => on(b, 'click', () => {
+      [...q('sizes').children].forEach(x => Object.assign(x.style, { background: 'rgba(255,255,255,.22)', color: '#fff', textShadow: '' }));
+      Object.assign(b.style, { background: '#fff', color: '#111', textShadow: 'none' });
+    }));
+    window.GT_K = window.GT_K || 0; window.GT_SIZE = 'M';
+    [...q('sizes').children].forEach(b => on(b, 'click', () => { window.GT_SIZE = b.textContent.trim(); }));
+    const SLUG = (it) => it.n.includes('Boxy Cropped') ? '8700-boxy-cropped' : it.n.includes('Subli') ? 'subli-cotton-tee' : it.n.includes('Muscle') ? 'muscle-tee' : it.no === '8600' ? '8600-acid-washed' : it.no;
+    on(q('cta'), 'click', e => {
+      e.preventDefault();
+      const it = ITEMS[window.GT_K || 0]; let ql = [];
+      try { ql = JSON.parse(localStorage.getItem('gt_quote')) || []; } catch (_) {}
+      const slug = SLUG(it), color = window.GT_COL || it.c[0][0], size = window.GT_SIZE || 'M';
+      const ex = ql.find(l => l.slug === slug && l.color === color && l.size === size);
+      if (ex) ex.packs += 1; else ql.push({ slug, code: it.no || (it.n.includes('Subli') ? 'SUBLI' : 'MUSCLE'), name: it.n, color, size, packs: 1 });
+      try { localStorage.setItem('gt_quote', JSON.stringify(ql)); } catch (_) {}
+      location.href = 'shop.html#/quote';
+    });
+    // product details: click thumbnail / name / number (or the "View details" link)
+    const openDet = e => { if (e) { e.preventDefault(); e.stopPropagation(); } const it = ITEMS[window.GT_K || 0]; window.gtOpenDetails && window.gtOpenDetails(SLUG(it), { color: window.GT_COL, size: window.GT_SIZE }); };
+    const nameCol = q('lnName').parentElement, thumbBox = q('thumb').parentElement;
+    const more = document.createElement('button');
+    more.type = 'button'; more.textContent = 'ⓘ View details';
+    Object.assign(more.style, { alignSelf: 'flex-start', marginTop: '2px', padding: '3px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: '700', letterSpacing: '.03em', color: '#0B1B34', background: 'rgba(255,255,255,.85)', textShadow: 'none' });
+    nameCol.appendChild(more);
+    [nameCol, thumbBox].forEach(el => { el.style.cursor = 'pointer'; el.title = 'View product details'; on(el, 'click', openDet); });
+
+    // try-on scan
+    let anims = [], shown = -1;
+    const setFig = (layer, tint, bx, look) => {
+      tint.parentElement.style.display = 'none';
+      layer.style.backgroundImage = "url('" + look + "')";
+      if (layer === mNext) grid.style.webkitMaskImage = grid.style.maskImage = "url('" + look + "')";
+    };
+    const LY = [[mCur, tCur], [mNext, tNext]]; let fi = 0, swapA = null;
+    const settle = () => {
+      const [F] = LY[fi], [B] = LY[1 - fi];
+      Object.assign(B.style, { clipPath: 'inset(0)', opacity: '1', zIndex: '2' });
+      Object.assign(F.style, { clipPath: 'inset(0)', opacity: '0', zIndex: '1' });
+      fi = 1 - fi;
+    };
+    const stopAll = () => {
+      if (anims.length || swapA) settle();
+      anims.forEach(x => x.cancel()); anims = []; swapA && swapA.cancel(); swapA = null;
+    };
+    const prep = look => {
+      const [F] = LY[fi], [B, bt] = LY[1 - fi];
+      setFig(B, bt, 0, look); B.style.webkitMaskImage = B.style.maskImage = 'none';
+      Object.assign(F.style, { zIndex: '1', opacity: '1', clipPath: 'inset(0)' });
+      Object.assign(B.style, { zIndex: '2', opacity: '1' });
+      return [F, B];
+    };
+    const swapLook = look => {
+      curCol = look; if (shown < 0) return;
+      stopAll();
+      const [F, B] = prep(look);
+      if (RM) { B.style.clipPath = 'inset(0)'; settle(); return; }
+      B.style.clipPath = 'inset(0)'; B.style.opacity = '0';
+      const an = B.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' });
+      swapA = an; an.onfinish = () => { if (swapA !== an) return; settle(); an.cancel(); swapA = null; };
+    };
+    const tryOn = k => {
+      shown = k; updateBuy(k);
+      [k - 2, k - 1, k + 1, k + 2].forEach(j => { const im = new Image(); im.src = ITEMS[mod(j, ITEMS.length)].c[0][2]; });
+      const pre = new Image(); pre.src = curCol;
+      const go = () => { if (shown === k) runTry(k); };
+      pre.decode ? pre.decode().then(go, go) : (pre.onload = go);
+    };
+    const runTry = k => {
+      stopAll();
+      const [F, B] = prep(curCol);
+      if (RM) { settle(); return; }
+      const E = 'cubic-bezier(.45,0,.25,1)', D = 1200;
+      B.style.clipPath = 'inset(0 0 100% 0)';
+      const a1 = B.animate([{ clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)' }], { duration: D, easing: E, fill: 'forwards' });
+      const a2 = F.animate([{ clipPath: 'inset(0% 0 0 0)' }, { clipPath: 'inset(100% 0 0 0)' }], { duration: D, easing: E, fill: 'forwards' });
+      const a3 = scan.animate([
+        { top: '0%', opacity: 0 }, { top: '2%', opacity: 1, offset: .02 },
+        { top: '98%', opacity: 1, offset: .98 }, { top: '100%', opacity: 0 }], { duration: D, easing: E, fill: 'forwards' });
+      anims = [a1, a2, a3];
+      a1.onfinish = () => { if (anims[0] !== a1) return; settle(); anims.forEach(x => x.cancel()); anims = []; };
+    };
+
+    // input
+    let pos = 0, target = 0, intro = RM ? 1 : 0, sx = 0, sy = 0, tx = 0, ty = 0;
+    let dragging = false, down = false, moved = false, p0 = 0, x0 = 0, y0 = 0, lx = 0, lt = 0, vel = 0, downCard = null;
+    let px = -200, py = -200, cx = -200, cy = -200, mode = '', pressed = false;
+    const setMode = m => {
+      if (m === mode && !this._pd) return; mode = m;
+      const base = m === 'try' ? 1.5 : m === 'drag' ? 1.2 : m === 'btn' ? .6 : 1;
+      ring.style.transform = 'scale(' + base * (pressed ? 1.05 : 1) + ')';
+      ring.style.background = m === 'try' ? 'rgba(255,255,255,.92)' : 'rgba(255,255,255,.14)';
+      dot.style.opacity = m === 'try' || m === 'drag' ? 0 : 1;
+      dot.style.transform = m === 'try' || m === 'drag' ? 'scale(0)' : 'scale(1)';
+      tTry.style.opacity = m === 'try' ? 1 : 0; tTry.style.transform = m === 'try' ? 'scale(1)' : 'scale(.5)';
+      tDrag.style.opacity = m === 'drag' ? 1 : 0; tDrag.style.transform = m === 'drag' ? 'scale(1)' : 'scale(.5)';
+      this._pd = false;
+    };
+    if (fine) cur.style.display = 'block';
+    const modeFor = el => dragging ? 'drag' : el.closest('[data-card]') ? 'try' : el.closest('button,a') ? 'btn' : el.closest('[data-k="stage"]') ? 'drag' : '';
+
+    on(window, 'pointermove', e => {
+      px = e.clientX; py = e.clientY;
+      if (down) {
+        const dx = px - x0;
+        if (!moved && Math.hypot(dx, py - y0) > 6) { moved = true; dragging = true; }
+        if (dragging) {
+          pos = p0 - dx / XS[1];
+          const now = performance.now(), dt = Math.max(1, now - lt);
+          vel = vel * .6 + ((px - lx) / dt) * .4; lx = px; lt = now;
+        }
+      }
+      setMode(modeFor(e.target));
+    });
+    on(stage, 'pointerdown', e => {
+      down = true; moved = false; p0 = pos; x0 = lx = e.clientX; y0 = e.clientY; lt = performance.now(); vel = 0;
+      downCard = e.target.closest('[data-card]');
+    });
+    on(window, 'pointerdown', e => { pressed = true; this._pd = true; setMode(modeFor(e.target)); });
+    on(window, 'pointerup', e => {
+      pressed = false; this._pd = true;
+      if (down) {
+        if (dragging) { const flick = vel / XS[1] * 100; target = Math.round(pos - flick * 3.2); }
+        else if (downCard) { const i = +downCard.dataset.i; const u = mod(i - pos + NC / 2, NC) - NC / 2; target = Math.round(pos + u); }
+      }
+      down = false; dragging = false; downCard = null;
+      setMode(modeFor(e.target));
+    });
+    let acc = 0, lastW = 0;
+    on(window, 'wheel', e => {
+      acc += Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      const now = performance.now();
+      if (Math.abs(acc) > 60 && now - lastW > 260) { target += Math.sign(acc); acc = 0; lastW = now; }
+    }, { passive: true });
+    on(window, 'keydown', e => { if (e.key === 'ArrowRight') target++; if (e.key === 'ArrowLeft') target--; });
+    on(q('prev'), 'click', () => target--);
+    on(q('next'), 'click', () => target++);
+    tabBtns.forEach(b => on(b, 'click', () => {
+      tabBtns.forEach(x => { x.dataset.active = ''; x.style.color = 'rgba(30,30,32,.72)'; x.style.fontWeight = 500; });
+      b.dataset.active = '1'; b.style.color = '#111'; b.style.fontWeight = 600; placePill();
+      if (!b.dataset.href) target += 5; else setTimeout(() => { location.href = b.dataset.href; }, 450);
+    }));
+    cards.forEach(c => on(c, 'pointerenter', () => { if (!RM) c.querySelector('[data-k="sheen"]').animate([{ transform: 'translateX(-120%)' }, { transform: 'translateX(120%)' }], { duration: 1000, easing: EZ }); }));
+
+    // frame
+    const frame = now => {
+      const t = now / 1000;
+      if (!dragging) pos = RM ? target : pos + (target - pos) * .085;
+      intro = Math.min(1, intro + .012);
+      const ie = 1 - Math.pow(1 - intro, 3);
+      tx = dragging ? Math.max(-.35, Math.min(.35, (px - x0) / W * .6)) : 0; ty = 0;
+      sx += (tx - sx) * .07; sy += (ty - sy) * .07;
+      for (let i = 0; i < cards.length; i++) {
+        const c = cards[i], u = mod(i - pos + NC / 2, NC) - NC / 2, a = Math.abs(u), sg = Math.sign(u);
+        let s, z, op, ry, bl = 0, zi;
+        if (a < 1) { s = .55 + .45 * a; z = -260 * (1 - a); op = a; ry = -sg * 16 * a; zi = 1; }
+        else { s = 1 / (1 + .3 * Math.pow(a - 1, 1.15)); z = -110 * (a - 1); op = 1; ry = -sg * (16 + 9 * Math.min(2, a - 1)); bl = 0; zi = Math.round(100 - 10 * a); }
+        if (a > 3.4) op = Math.min(op, 1 - (a - 3.4) / .8);
+        if (a < .9) op = Math.min(op, Math.max(0, (a - .5) / .4));
+        op = Math.max(0, op) * ie;
+        const bob = 0;
+        const y = bob - (1 - s) * H * .04, x = sg * xAt(a) * ie;
+        ry += sx * 10;
+        c.style.transform = 'translate(' + x + 'px,' + y + 'px) perspective(1300px) translateZ(' + z + 'px) rotateY(' + ry + 'deg) rotateX(' + (-sy * 6) + 'deg) scale(' + s * (.6 + .4 * ie) + ')';
+        c.style.opacity = op; c.style.zIndex = zi;
+        c.style.filter = bl > .01 ? 'blur(' + bl + 'px)' : '';
+        c.style.visibility = op < .01 ? 'hidden' : 'visible';
+      }
+      room.style.transform = 'translate3d(' + (-sx * 22) + 'px,' + (-sy * 14) + 'px,0) scale(' + (1.08 - .03 * ie) + ')';
+      ghost.style.transform = 'translate(calc(-50% - ' + sx * 40 + 'px),' + (-sy * 16) + 'px)';
+      gl.forEach((g, i) => g.style.transform = 'translateY(' + (1 - ie) * (60 + 30 * i) + 'px)');
+      cx += (px - cx) * .22; cy += (py - cy) * .22;
+      cur.style.transform = 'translate(' + (cx - 29) + 'px,' + (cy - 29) + 'px)';
+      if (!dragging && !down && Math.abs(target - pos) < .3 && mod(Math.round(target), NC) !== shown) tryOn(mod(Math.round(target), NC));
+      this.raf = requestAnimationFrame(frame);
+    };
+    this.raf = requestAnimationFrame(frame);
+  }
+}
+</script>
+</body>
+</html>

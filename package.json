@@ -1,0 +1,8 @@
+{
+  "name": "gothreadz-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GoThreadz wholesale blank apparel website (preview)",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
