@@ -277,3 +277,5 @@ table.sz td:first-child{font-weight:800}
 
 .thumbs .cu-t{position:relative}
 .thumbs .cu-t span{position:absolute;left:4px;bottom:4px;background:rgba(11,27,52,.85);color:#fff;font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:999px}
+
+@media (max-width:520px){.thumbs .cu-t span{font-size:.52rem;padding:2px 5px;white-space:nowrap;left:3px;bottom:3px}}
